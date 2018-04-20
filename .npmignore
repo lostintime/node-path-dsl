@@ -1,4 +1,13 @@
-.idea
 *.iml
-node_modules/
 .editorconfig
+.yarnclean
+node_modules
+coverage
+.nyc_output
+.DS_Store
+*.log
+.vscode
+.idea
+.awcache
+compiled
+.rpt2_cache
