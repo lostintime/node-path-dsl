@@ -30,6 +30,7 @@ const DEFAULT_SEP = "/"
  */
 export type AbsRoot = {
   readonly _tag: "AbsRoot"
+
   readonly isAbsolute: true
 
   child(segment: AbsPath["segment"]): AbsPath
@@ -71,8 +72,10 @@ export const AbsRoot: AbsRoot = {
  * Absolute path (starts with root path)
  */
 export class AbsPath {
-  readonly _tag = "AbsPath"
-  readonly isAbsolute = true
+  readonly _tag: "AbsPath" = "AbsPath"
+
+  readonly isAbsolute: true = true
+
   constructor(readonly prev: AbsRoot | AbsPath,
               readonly segment: PathSegmentCustom) {
   }
@@ -115,10 +118,9 @@ export class AbsPath {
  */
 export type RelRoot = {
   readonly _tag: "RelRoot"
+
   readonly isAbsolute: false
-  /**
-   * Create relative path by appending Up or Custom segment type
-   */
+
   child: (segment: RelPath["segment"]) => RelPath
 
   parent: () => RelPath
@@ -156,8 +158,10 @@ export const RelRoot: RelRoot = {
  * Relative path (starts with empty path)
  */
 export class RelPath {
-  readonly _tag = "RelPath"
-  readonly isAbsolute = false
+  readonly _tag: "RelPath" = "RelPath"
+
+  readonly isAbsolute: false = false
+
   constructor(readonly prev: RelPath | RelRoot,
               readonly segment: PathSegmentUp | PathSegmentCustom) {
   }

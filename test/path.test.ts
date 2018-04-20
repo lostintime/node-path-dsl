@@ -19,6 +19,7 @@ import { expect } from "chai"
 import { Path } from "../src"
 import { RelRoot, AbsRoot, AbsPath, RelPath } from "../src/path"
 import { PathSegmentCustom, PathSegmentUp } from "../src/segment"
+import { Success } from "funfix-core"
 
 describe("AbsRoot", () => {
   describe("Object", () => {
@@ -447,6 +448,32 @@ describe("Path", () => {
       const left = Path.parse("hello/here").get()
       const right = Path.parse("../world").get()
       expect(Path.concat(left, right).isSuccess()).is.true
+    })
+
+    it("can refine on Path in switch statements", () => {
+      const left = Path.parse("hello/here").get()
+      const right = Path.parse("../world").get()
+      Path.concat(left, right)
+        .flatMap<Path>(path => {
+          switch (path._tag) {
+            case "AbsRoot": {
+              const p: AbsRoot = path
+              return Success(p)
+            }
+            case "AbsPath": {
+              const p: AbsPath = path
+              return Success(p)
+            }
+            case "RelRoot": {
+              const p: RelRoot = path
+              return Success(p)
+            }
+            case "RelPath": {
+              const p: RelPath = path
+              return Success(p)
+            }
+          }
+        })
     })
   })
 
