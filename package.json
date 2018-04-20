@@ -1,7 +1,6 @@
 {
   "name": "path-dsl",
-  "private": true,
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Path Parsing DSL",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
