@@ -12,7 +12,7 @@ before_script:
 script:
   - yarn run build && yarn run test:prod
 deploy:
-  provider: yarn
+  provider: npm
   on:
     tags: true
   tag: next
