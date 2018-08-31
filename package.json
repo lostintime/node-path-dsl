@@ -36,7 +36,7 @@
     "rimraf": "^2.6.2",
     "ts-node": "^6.0.0",
     "tslint": "^5.9.1",
-    "tslint-config-standard": "^7.0.0",
+    "tslint-config-standard": "^8.0.0",
     "tslint-eslint-rules": "^5.1.0",
     "typescript": "^2.8.1"
   },
