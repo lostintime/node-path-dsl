@@ -25,7 +25,7 @@
   "homepage": "https://github.com/lostintime/node-path-dsl",
   "dependencies": {
     "funfix-core": "^7.0.1",
-    "typematcher": "^0.8.0"
+    "typematcher": "^0.9.0"
   },
   "devDependencies": {
     "@types/chai": "^4.1.2",
