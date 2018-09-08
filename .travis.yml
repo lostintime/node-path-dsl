@@ -1,23 +1,23 @@
 language: node_js
 cache:
   directories:
-    - node_modules
+  - node_modules
 notifications:
   email: false
 node_js:
-  - '8.11'
+- '8.11'
 before_script:
-  - yarn global add codecov
-  - yarn install
+- yarn global add codecov
+- yarn install
 script:
-  - yarn run build && yarn run test:prod
+- yarn run build && yarn run test:prod
 deploy:
   provider: npm
   on:
     tags: true
   skip_cleanup: true
-  email: "lostintime.dev@gmail.com"
+  email: lostintime.dev@gmail.com
   api_key:
-    secure: VxDl5PD4vJHmXXB7E5KX5MWR9rvYyOSSRJqJXfjXNvp/UHk2WY5CWJx7l9I9OGrbO30750ZV5TauOTbUJ1tKWiREKapU8ZRq+XZSXzCoacxNIvfQWnrQPBF9MQJbFSVuK0Dc1EJCfQQ6LONUlZ6MMpnZ767G7VzACj7xAzWQgOUcbxVQ6Cfj4DGRmgmZI9XAA6G8mtWgIEM8C1Sb6/o6qOAmwpUOakWo5QHCDBzc62o4TjgMPv3YCEd/+albWMAPyMoqc3rWXysftJIc7RKOPqQABl5A3mZMUZcxQjGji+8mQQJDygo1blMrSKd5iBu9H8F2MKRWJuLvSH3C2Q5k49RHv9KIRehWNRuQ1mKx/rnZ081ZsrDDjB+BdWp4/n3J/MYjarBx8enWH8ridm/kPZMvrCmA0+rCRDQlV1+06mC6WbVcVSPUL5XnxqCeXxlpjU14wWAf2Mv+DFYLcppnXmBni/UopW0y3vpO+xj9R5ox1VHMDjQFe+PZrIEzggGcW4ZR+ZFZdNfz6KNWX9nIBK4w111gYth0byZefo6n7S2/5lWqY9q6nYT/qEQEW7+ZGstsHHxX4tvBtbF/KH7qm2wdGAROIYxX2FI0ccvWvYj9HDG+Fn6hTIyi1HG0bDiyiOfVhQNnJvghxKp4b6fMX+4O6uPQl3WANn/G+c0RiXc=
+    secure: P6XvKQEBrGJDapFcuQV9C+hVNILiZ2/mtzNKQFf0SdLIY3QfmA1pGVxS5gim7MqZt/0y+AY5zpZOV1Gay4+5KQEyrscAoDWEr3SQ38CmXbFRS/HKi+9Hj2wezxfjjHjLX1wVhS1wrqJOb+kbzUEHWpsghyCM8n4WPZbcmuYxA1+xNEtSTPmZm0nnCW5H58uGwsZjanQ1Qj22V5PVF25PgXntFiNLt1seDiWnLr/Soe2xAxFvYAyrdia/OozQnyenPlFp3IQ8GR6HHWtgX4S8ieYMStHZb+HBUKmK1K6BeCHiH+tguLDM+HLFZgzbb3g7aGACLpBlD4NZ+ICRe6u8BpbmfUbKwWtsBvu3hv9NGqGRf/J2gXQa2+mJR8/72tRsd7ILPIibQSAv5Oqosr9SDuLK/2AOfshoZlBrghHHIQjV+mgYtgcIKN5SSOKVVH2gkARfpArNXnWP453JzfHVi3Bnlg451UVjFqvLIn8Pgp/r0p/r+0xox+jnaifum2Wqna6v7taOzz9l8zHyTb1ETzZEGD15RvkVwbRLlLXyf8kXeZsGrzWGgDXZq46aME338QyzagMY3nfuQJ1DjXZytiQtGk3UVw7oG31WcTxCYUw9hPjeYg0K2669tKEgwk2Svd1mDDZs3HGcYxrPJOzlPh33bBb8aw9fFfePhQH48KU=
 after_success:
-  - codecov
+- codecov
